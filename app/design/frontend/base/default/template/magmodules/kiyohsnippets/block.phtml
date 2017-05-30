@@ -1,0 +1,50 @@
+<?php
+/**
+ * Magmodules.eu - http://www.magmodules.eu
+ *
+ * NOTICE OF LICENSE
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to info@magmodules.eu so we can send you a copy immediately.
+ *
+ * @category      Magmodules
+ * @package       Magmodules_Kiyohsnippets
+ * @author        Magmodules <info@magmodules.eu>
+ * @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+ * @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+	$snippets = $this->getSnippets();
+	$url = $this->getKiyohLink();
+?>
+<div class="kiyoh-shop-snippets">
+	<?php echo $this->getKiyohStars($snippets['percentage']); ?>
+	<div class="kiyoh-schema" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+		<div itemprop="aggregateRating" itemscope="itemscope" itemtype="http://schema.org/AggregateRating">
+			<meta itemprop="bestRating" content="<?php echo $snippets['max']; ?>">
+			<p>
+				<?php 
+					if(!empty($url)) {
+						echo '<a href="' . $url . '" target="_blank" class="kiyoh-link">';
+					}	
+					if(!empty($snippets['type'])) { 
+						echo Mage::helper('kiyohsnippets')->__('Rating %s out of %s, based on %s customer reviews', '<span itemprop="ratingValue">' . $snippets['avg'] . '</span>', $snippets['max'], '<span itemprop="ratingCount">' . $snippets['qty'] . '</span>'); 
+					} else {
+						echo Mage::helper('kiyohsnippets')->__('%s recommandation, based on %s customer reviews', '<span itemprop="ratingValue">' . $snippets['avg'] . '</span>', '<span itemprop="ratingCount">' . $snippets['qty'] . '</span>'); 					
+					}
+					if(!empty($snippets['text_suffix'])) {
+						echo ' ' . $snippets['text_suffix']; 
+					}
+					if(!empty($url)) {
+						echo '</a>';
+					}	
+				?>
+			</p>
+		</div>
+	</div>
+</div>	

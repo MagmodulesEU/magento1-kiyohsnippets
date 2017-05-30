@@ -1,0 +1,7 @@
+app/code/local/Magmodules/Kiyohsnippets            app/code/local/Magmodules/Kiyohsnippets
+app/etc/modules/Magmodules_Kiyohsnippets.xml            app/etc/modules/Magmodules_Kiyohsnippets.xml
+app/locale/en_US/Magmodules_Kiyohsnippets.csv            app/locale/en_US/Magmodules_Kiyohsnippets.csv
+app/locale/nl_NL/Magmodules_Kiyohsnippets.csv            app/locale/nl_NL/Magmodules_Kiyohsnippets.csv
+app/design/frontend/base/default/layout/magmodules_kiyohsnippets.xml            app/design/frontend/base/default/layout/magmodules_kiyohsnippets.xml
+app/design/frontend/base/default/template/magmodules/kiyohsnippets         app/design/frontend/base/default/template/magmodules/kiyohsnippets
+skin/frontend/base/default/magmodules/kiyohsnippets           skin/frontend/base/default/magmodules/kiyohsnippets
